@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fonts/Pacifico/Pacifico-Regular.ttf">
+    <link rel="stylesheet" href="./fonts/Righteous-Regular.ttf">
+    <link rel="stylesheet" href="./css/mediaQuery.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+
+    <header class="bg-rose p-5">
+        <div class="container">
+
+
+            <div class=" d-flex justify-content-center align-items-center flex-column">
+                <h1 class="text-center py-4 ">Bookmarker</h1>
+                <div class="bookMarkBody py-3 w-100">
+                    <h2 class=" text-center ">
+                        <i class="fa-bookmark fa-solid"></i>
+                        Bookmark your favorite sites
+                        <i class="fa-bookmark fa-solid"></i>
+                    </h2>
+
+
+                    <div class="py-5 ">
+                        <div class="mb-3 ">
+                            <label for="siteNameInput" class="form-label fw-bolder">
+                                <i class="fa-solid fa-book-bookmark me-2"></i>Site Name </label>
+                            <div class="position-relative">
+                                <input type="text" class="form-control bookMarkName " id="siteNameInput"
+                                    placeholder="BookMark Name">
+                                <i class="fa-solid fa-check position-absolute d-none "
+                                    style="top: 50%; right: 10px; transform: translateY(-50%); color: green;"></i>
+                                <i class="fa-regular fa-circle-xmark position-absolute d-none "
+                                    style="top: 50%; right: 10px; transform: translateY(-50%); color: red;"></i>
+
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="siteURLInput" class="form-label fw-bolder"><i
+                                    class="fa-solid fa-chain me-2"></i>Site URL</label>
+                            <div class="position-relative">
+                                <input type="text" class="form-control bookMarkURL" id="siteURLInput"
+                                    placeholder="Website URL">
+                                <i class="fa-solid fa-check position-absolute d-none "
+                                    style="top: 50%; right: 10px; transform: translateY(-50%); color: green;"></i>
+                                <i class="fa-regular fa-circle-xmark position-absolute d-none "
+                                    style="top: 50%; right: 10px; transform: translateY(-50%); color: red;"></i>
+                            </div>
+                        </div>
+                        <div class="w-100 text-center">
+                            <button class="btn btn-dark-red px-5 " id="submit-btn"
+                                onclick="addBookMark()">submit</button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+            <div class="py-3">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">index</th>
+                            <th scope="col">Website Name</th>
+                            <th scope="col">Visit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableRow">
+
+
+
+                    </tbody>
+                </table>
+
+                <!-- the thing i want the modal opener to take -->
+                <!--  data-bs-target="#staticBackdrop" data-bs-toggle="modal" -->
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div>
+                                    <i class="fa-solid fa-circle text-danger me-2"></i>
+                                    <i class="fa-solid fa-circle text-warning me-2"></i>
+                                    <i class="fa-solid fa-circle text-success me-2"></i>
+
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h3>Site Name or Url is not valid, Please follow the rules below :</h3>
+                            </div>
+                            <div class="modal-footer justify-content-start">
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-regular fa-circle-right text-dark-red me-2 mb-2"></i>
+                                    <p>Site name must contain at least 3 characters</p>
+                                </div>
+                                <div class="d-flex align-items-center ">
+                                    <i class="fa-regular fa-circle-right text-dark-red me-2 mb-2"></i>
+                                    <p>Site URL must be a valid one</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
